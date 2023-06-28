@@ -1,0 +1,16 @@
+---
+# See: https://ansible.readthedocs.io/projects/lint/configuring/#ansible-lint-configuration
+
+offline: true
+
+profile: production
+
+exclude_paths:
+  - changelogs
+
+enable_list:
+  - args
+  - empty-string-compare
+  - no-log-password
+  - no-same-owner
+  - yaml

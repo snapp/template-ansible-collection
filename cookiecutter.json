@@ -1,0 +1,21 @@
+{
+    "namespace": "name",
+    "collection_name": "example",
+    "description": "example collection description",
+    "tag": [
+        "application",
+        "cloud",
+        "database",
+        "infrastructure",
+        "linux",
+        "monitoring",
+        "networking",
+        "security",
+        "storage",
+        "tools",
+        "windows"
+    ],
+    "scm_repository": "https://github.com/{{ cookiecutter.namespace }}/ansible-collection-{{ cookiecutter.collection_name }}",
+    "author": "your_email@example.com",
+    "min_ansible_version": "2.14.0"
+}
