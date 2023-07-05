@@ -9,7 +9,8 @@ on:
     branches:
       - main
   pull_request:
-  # Run once per day to ensure that even if there haven't been commits that we are still testing against latest version of ansible-test for each ansible-base version
+  # Run once per day to ensure that even if there haven't been commits that we are still testing against latest version
+  # of ansible-test for each ansible-base version
   schedule:
     - cron: '0 4 * * *'
 

@@ -25,7 +25,8 @@ on:
       - main
       - stable-*
   pull_request:
-  # Run once per day to ensure that even if there haven't been commits that we are still testing against latest version of ansible-test for each ansible version
+  # Run once per day to ensure that even if there haven't been commits that we are still testing against latest
+  # version of ansible-test for each ansible version
   schedule:
     - cron: '0 4 * * *'
 
@@ -60,7 +61,7 @@ jobs:
           - stable-2.14
           - stable-2.15
           - devel
-        # - milestone
+          # - milestone
     runs-on: 'ubuntu-latest'
     steps:
       # Run sanity tests inside a Docker container.
@@ -99,7 +100,7 @@ jobs:
           - stable-2.14
           - stable-2.15
           - devel
-        # - milestone
+          # - milestone
 
     steps:
       - name: >-
@@ -184,9 +185,11 @@ jobs:
           pull-request-change-detection: true
 
 
-  check:  # This job does nothing and is only used for the branch protection
-          # or multi-stage CI jobs, like making sure that all tests pass before
-          # a publishing job is started.
+  # This job does nothing and is only used for the branch protection
+  # or multi-stage CI jobs, like making sure that all tests pass before
+  # a publishing job is started.
+  check:
+
     if: always()
 
     needs:
