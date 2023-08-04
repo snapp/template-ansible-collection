@@ -49,6 +49,7 @@ build_ignore:
   - .github
   - '*/.gitkeep'
   - .pre-commit-config.yaml
+  - .vscode
   - changelogs/.plugin-cache.yaml
 
 # `manifest` is mutually exclusive with `build_ignore`
