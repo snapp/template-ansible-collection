@@ -1,0 +1,35 @@
+{
+  "todo-tree.general.tags": [
+    "BUG",
+    "FIXME",
+    "TODO",
+    "REDO",
+    "NOTE"
+  ],
+  "todo-tree.highlights.customHighlight": {
+    "BUG": {
+      "background": "#FF0000",
+      "foreground": "#FFFFFF",
+      "iconColor": "#FF0000"
+    },
+    "FIXME": {
+      "background": "#FF0000",
+      "foreground": "#FFFFFF",
+      "iconColor": "#FF0000"
+    },
+    "NOTE": {
+      "background": "#808080",
+      "foreground": "#FFFFFF",
+      "icon": "note",
+      "iconColor": "#808080"
+    },
+    "REDO": {
+      "icon": "$(redo)"
+    },
+    "TODO": {
+      "background": "#FFFF00",
+      "foreground": "#000000",
+      "iconColor": "#FFFF00"
+    }
+  }
+}
