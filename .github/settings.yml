@@ -73,6 +73,14 @@ labels:
     color: "#0075CA"
     description: null
 
+# https://docs.github.com/en/rest/reference/repos#add-a-repository-collaborator for available options
+# Collaborators: give specific users access to this repository.
+collaborators:
+  - username: snapp
+  - username: brandor5
+  - username: rhjhunt
+  - username: markknittel
+
 # https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches
 branches:
   - name: main
