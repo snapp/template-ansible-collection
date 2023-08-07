@@ -2,6 +2,7 @@
     "namespace": "name",
     "collection_name": "example",
     "description": "example collection description",
+    "version": "1.0.0",
     "tag": [
         "application",
         "cloud",
