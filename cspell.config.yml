@@ -1,0 +1,31 @@
+---
+
+dictionaryDefinitions:
+  - name: Spellcheck Overrides
+    path: ./cspell_dictionary.txt
+    addWords: true
+
+dictionaries:
+  - overrides
+
+words:
+  - "antsibull"
+  - "cliconf"
+  - "cookiecutter"
+  - "devel"
+  - "docsite"
+  - "endraw"
+  - "fqcn"
+  - "httpapi"
+  - "HTTPAPI"
+  - "Libera"
+  - "netcommon"
+  - "netconf"
+  - "notesdir"
+  - "rstcheck"
+
+ignorePaths:
+  - "**/.github/CODEOWNERS"
+  - "**/.github/settings.yml"
+  - "**/.gitignore"
+  - "**/cspell.config.yml"
