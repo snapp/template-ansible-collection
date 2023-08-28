@@ -5,7 +5,7 @@ namespace: "{{ cookiecutter.namespace }}"
 
 name: "{{ cookiecutter.collection_name }}"
 
-version: {{ cookiecutter.version }}
+version: "{{ cookiecutter.version }}"
 
 readme: README.md
 
