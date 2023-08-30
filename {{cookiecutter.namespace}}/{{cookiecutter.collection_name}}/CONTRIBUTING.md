@@ -19,7 +19,7 @@ You can trigger it locally with `pre-commit run --all-files` or even to run only
 
 ## Release Workflow
 
-This project uses [antisbull-changelog](https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelogs.rst) for managing the `CHANGELOG.rst` file.
+This project uses [antsibull-changelog](https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelogs.rst) for managing the `CHANGELOG.rst` file.
 
 It is highly recommended that you ensure a changelog fragment exists for each Pull Request (PR) following the process defined in the [changelogs-how-to](https://docs.ansible.com/ansible/devel/community/development_process.html#changelogs-how-to).
 
