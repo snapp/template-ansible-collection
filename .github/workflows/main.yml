@@ -23,6 +23,6 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v3
       - name: Run cspell Spell Check
-        uses: streetsidesoftware/cspell-action@v3
+        uses: streetsidesoftware/cspell-action@v4
         with:
           config: cspell.config.yml
