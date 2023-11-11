@@ -7,6 +7,14 @@ By leveraging [cookiecutter](https://www.cookiecutter.io) you will be asked a sm
 > **NOTE**
 > This template draws inspiration from the [Ansible Community GitHub Collection Template](https://github.com/ansible-collections/collection_template).
 
+> **WARNING**
+>
+> This code is NOT supported by Red Hat and may not work as expected.
+>
+> Red Hat does not guarantee its correctness, reliability, or performance.
+>
+> Use at your own risk!
+
 ## Requirements
 
 ```bash
