@@ -18,5 +18,6 @@
     ],
     "scm_repository": "https://github.com/{{ cookiecutter.namespace }}/ansible-collection-{{ cookiecutter.collection_name }}",
     "author": "your_email@example.com",
-    "min_ansible_version": "2.14.0"
+    "min_ansible_version": "2.14.0",
+    "enable_antsibull_changelog": true
 }
