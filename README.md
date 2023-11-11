@@ -1,6 +1,6 @@
 # Cookiecutter Template: Ⓐ Ansible Collection
 
-This project provides an opinionated template for bootstrapping an Ansible Collection that extends the minimal structure provided by ``ansible galaxy collection init``.
+This project provides an opinionated template for bootstrapping an Ansible Collection that extends the minimal structure provided by `ansible galaxy collection init`.
 
 By leveraging [cookiecutter](https://www.cookiecutter.io) you will be asked a small number of questions (e.g., namespace, collection name, etc.) which will then be automatically applied to the resulting directory structure.
 
@@ -31,7 +31,7 @@ $ cookiecutter https://github.com/snapp/template-ansible-collection
 
 Cookiecutter provides a few options for specifying user configurations which can be used to override the template default question values.
 
-Creating a ``.cookiecutterrc`` file in your home directory is the easiest way to specify a user configuration, but you can also pass a config file in at runtime using the ``--config-file`` option.
+Creating a `.cookiecutterrc` file in your home directory is the easiest way to specify a user configuration, but you can also pass a config file in at runtime using the `--config-file` option.
 
 > **NOTE**
 > cookiecutter configuration files are formatted in YAML syntax
