@@ -2,9 +2,10 @@
 
 This project provides an opinionated template for bootstrapping an Ansible Collection that extends the minimal structure provided by ``ansible galaxy collection init``.
 
-By leveraging ``cookiecutter`` you will be asked a small number of questions (e.g., namespace, collection name, etc.) which will then be automatically applied to the resulting directory structure.
+By leveraging [cookiecutter](https://www.cookiecutter.io) you will be asked a small number of questions (e.g., namespace, collection name, etc.) which will then be automatically applied to the resulting directory structure.
 
-> **_NOTE:_** This template draws inspiration from the [Ansible Community GitHub Collection Template](https://github.com/ansible-collections/collection_template).
+> **NOTE**
+> This template draws inspiration from the [Ansible Community GitHub Collection Template](https://github.com/ansible-collections/collection_template).
 
 ## Requirements
 
@@ -17,6 +18,25 @@ $ pip install cookiecutter
 ```bash
 $ cookiecutter https://github.com/snapp/template-ansible-collection
 ```
+
+### Overriding template defaults
+
+Cookiecutter provides a few options for specifying user configurations which can be used to override the template default question values.
+
+Creating a ``.cookiecutterrc`` file in your home directory is the easiest way to specify a user configuration, but you can also pass a config file in at runtime using the ``--config-file`` option.
+
+> **NOTE**
+> cookiecutter configuration files are formatted in YAML syntax
+
+**Example:**
+```yaml
+---
+default_context:
+  author: "snapp@example.com"
+  namespace: "snapp"
+```
+
+See the [Advanced Usage / User Config](https://cookiecutter.readthedocs.io/en/stable/advanced/user_config.html) documentation for more information.
 
 # License
 

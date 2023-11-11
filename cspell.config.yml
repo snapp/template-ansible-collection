@@ -12,6 +12,7 @@ words:
   - "antsibull"
   - "cliconf"
   - "cookiecutter"
+  - "cookiecutterrc"
   - "devel"
   - "docsite"
   - "endraw"
@@ -24,6 +25,7 @@ words:
   - "netconf"
   - "notesdir"
   - "rstcheck"
+  - "snapp"
 
 ignorePaths:
   - "**/.github/CODEOWNERS"
