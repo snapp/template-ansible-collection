@@ -1,11 +1,13 @@
+# Ⓐ Ansible Collection: {{ cookiecutter.namespace }}.{{ cookiecutter.collection_name }}
+
+{%- if cookiecutter.license != 'none' -%}
 [![GitHub License](https://img.shields.io/github/license/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }})](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/blob/main/LICENSE)
+{%- endif -%}
 [![Ansible Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-Ansible-silver.svg)](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html)
 
 [![ansible-lint](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/ansible-lint.yml/badge.svg)](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/ansible-lint.yml)
 [![ansible-test](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/ansible-test.yml/badge.svg)](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/ansible-test.yml)
 [![antsibull-docs-lint](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/antsibull-docs-lint.yml/badge.svg)](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/antsibull-docs-lint.yml)
-
-# Ⓐ Ansible Collection: {{ cookiecutter.namespace }}.{{ cookiecutter.collection_name }}
 
 {{ cookiecutter.description }}
 
@@ -71,18 +73,30 @@ You can also install a specific version of the collection, for example, if you n
 ansible-galaxy collection install {{ cookiecutter.namespace }}.{{ cookiecutter.collection_name }}:==0.1.0
 ```
 
-See [Ansible Using collections](https://docs.ansible.com/ansible/devel/user_guide/collections_using.html) for more details.{% if cookiecutter.enable_antsibull_changelog %}
+See [Ansible Using collections](https://docs.ansible.com/ansible/devel/user_guide/collections_using.html) for more details.
 
 <!-- TODO: ### Examples
 Include some quick examples that cover the most common use cases for your collection content.
--->
+-->{% if cookiecutter.enable_antsibull_changelog %}
 
 ## Release notes
 
-See the [changelog]({{ cookiecutter.scm_repository }}/tree/main/CHANGELOG.rst).{% endif %}
+See the [changelog]({{ cookiecutter.scm_repository }}/tree/main/CHANGELOG.rst).{% endif %}{% if cookiecutter.license != 'none' %}
 
 ## Licensing
+{% if cookiecutter.license == "GPL-3.0-or-later" %}
+GNU General Public License v3.0 or later
 
-GNU General Public License v3.0 or later.
+See [LICENSE](https://www.gnu.org/licenses/gpl-3.0.txt) to see the full text.{% elif cookiecutter.license == "AGPL-3.0-or-later" %}
+GNU Affero General Public License v3.0 or later
 
-See [LICENSE](https://www.gnu.org/licenses/gpl-3.0.txt) to see the full text.
+See [LICENSE](https://www.gnu.org/licenses/agpl-3.0.txt) to see the full text.{% elif cookiecutter.license == "Apache-2.0" %}
+Apache License 2.0
+
+See [LICENSE](https://www.apache.org/licenses/LICENSE-2.0.txt) to see the full text.{% elif cookiecutter.license == "MIT" %}
+MIT License
+
+See [LICENSE](https://spdx.org/licenses/MIT.html) to see the full text.{% elif cookiecutter.license == "BSD-3-Clause" %}
+BSD 3-Clause License
+
+See [LICENSE](https://spdx.org/licenses/BSD-3-Clause.html) to see the full text.{% endif %}{% endif +%}

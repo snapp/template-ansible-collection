@@ -19,6 +19,14 @@
     "scm_repository": "https://github.com/{{ cookiecutter.namespace }}/ansible-collection-{{ cookiecutter.collection_name }}",
     "author": "username@example.com",
     "requires_ansible_version": ">=2.15.0",
+    "license": [
+        "GPL-3.0-or-later",
+        "AGPL-3.0-or-later",
+        "Apache-2.0",
+        "MIT",
+        "BSD-3-Clause",
+        "none"
+    ],
     "enable_antsibull_changelog": true,
     "__prompts__": {
         "namespace": "What namespace will this collection reside in?",
@@ -29,6 +37,15 @@
         "scm_repository": "Where will the collection's source code be published?",
         "author": "Provide an email address for the individual or team responsible for the collection's source code",
         "requires_ansible_version": "The version of Ansible required to use the collection. Multiple versions can be separated with a comma (e.g., '>=2.10.0,<2.15.0')",
+        "license": {
+            "__prompt__": "Which license should your code be covered by (See: https://opensource.guide/legal)?",
+            "GPL-3.0-or-later": "GNU GPLv3 (https://choosealicense.com/licenses/gpl-3.0)",
+            "AGPL-3.0-or-later": "GNU AGPLv3 (https://choosealicense.com/licenses/agpl-3.0)",
+            "Apache-2.0": "Apache License 2.0 (https://choosealicense.com/licenses/apache-2.0)",
+            "MIT": "MIT License (https://choosealicense.com/licenses/mit)",
+            "BSD-3-Clause": "BSD 3-Clause License (https://choosealicense.com/licenses/bsd-3-clause)",
+            "none": "No license included"
+        },
         "enable_antsibull_changelog": "Would you like to enable antsibull-changelog support?"
     }
 }
