@@ -8,6 +8,9 @@ REMOVE_PATHS = [
     {% if not cookiecutter.enable_antsibull_changelog %}
         '{{cookiecutter.collection_name}}/changelogs',
         '{{cookiecutter.collection_name}}/CHANGELOG.rst',
+    {%- endif -%}
+    {% if cookiecutter.license == 'none' %}
+        '{{cookiecutter.collection_name}}/LICENSE',
     {% endif %}
 ]
 

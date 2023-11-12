@@ -29,18 +29,33 @@ authors:
 # NOTE: A short summary description of the collection.
 description: "{{ cookiecutter.description }}"
 
+{% if cookiecutter.license != 'none' -%}
 # NOTE: Either a single license or a list of licenses for content inside of a collection.
 #
 # Ansible Galaxy currently only accepts SPDX licenses
 # This key is mutually exclusive with license_file.
 # license:
-#   - "GPL-3.0-or-later"
+#   - "{{ cookiecutter.license }}"
 
 # NOTE: The path to the license file for the collection.
 #
 # This path is relative to the root of the collection.
 # This key is mutually exclusive with license.
 license_file: "LICENSE"
+{%- else -%}
+# NOTE: Either a single license or a list of licenses for content inside of a collection.
+#
+# Ansible Galaxy currently only accepts SPDX licenses
+# This key is mutually exclusive with license_file.
+# license:
+#   - GPL-3.0-or-later
+
+# NOTE: The path to the license file for the collection.
+#
+# This path is relative to the root of the collection.
+# This key is mutually exclusive with license.
+# license_file: ""
+{%- endif %}
 
 # NOTE: A list of tags you want to associate with the collection for indexing/searching.
 #

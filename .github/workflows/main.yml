@@ -44,7 +44,9 @@ jobs:
       matrix:
         extra_context:
           - defaults
+          - no_license
           - no_changelog
+          - no_license_or_changelog
 
     runs-on: ubuntu-latest
     steps:
@@ -67,7 +69,15 @@ jobs:
           cat > config.yml <<EOF
           default_context:
           $(case "${{ matrix.extra_context }}" in
+            no_license)
+            echo '  license: none'
+            ;;
             no_changelog)
+            echo '  license: Apache-2.0'
+            echo '  enable_antsibull_changelog: false'
+            ;;
+            no_license_or_changelog)
+            echo '  license: none'
             echo '  enable_antsibull_changelog: false'
             ;;
           esac)
