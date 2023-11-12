@@ -1,7 +1,7 @@
 {
     "namespace": "name",
     "collection_name": "example",
-    "description": "example collection description",
+    "description": "{{ cookiecutter.namespace }}.{{ cookiecutter.collection_name }} provides Ansible playbooks, roles, and modules for ...",
     "version": "1.0.0",
     "tag": [
         "application",
@@ -17,7 +17,18 @@
         "windows"
     ],
     "scm_repository": "https://github.com/{{ cookiecutter.namespace }}/ansible-collection-{{ cookiecutter.collection_name }}",
-    "author": "your_email@example.com",
-    "min_ansible_version": "2.14.0",
-    "enable_antsibull_changelog": true
+    "author": "username@example.com",
+    "requires_ansible_version": ">=2.15",
+    "enable_antsibull_changelog": true,
+    "__prompts__": {
+        "namespace": "What namespace will this collection reside in?",
+        "collection_name": "What should the collection be called?",
+        "description": "Provide a short description of the collection's purpose",
+        "version": "What is the initial version?",
+        "tag": "Select a tag you want to associate with the collection for indexing/searching",
+        "scm_repository": "Where will the collection's source code be published?",
+        "author": "Provide an email address for the individual or team responsible for the collection's source code",
+        "requires_ansible_version": "The version of Ansible required to use the collection. Multiple versions can be separated with a comma (e.g., '>=2.10,<2.15')",
+        "enable_antsibull_changelog": "Would you like to enable antsibull-changelog support?"
+    }
 }
