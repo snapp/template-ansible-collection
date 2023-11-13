@@ -17,6 +17,7 @@ words:
   - "docsite"
   - "endraw"
   - "fqcn"
+  - "fnmatch"
   - "gruntfuggly"
   - "httpapi"
   - "HTTPAPI"
