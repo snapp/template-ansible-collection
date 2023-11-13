@@ -12,7 +12,7 @@ repos:
       - id: check-merge-conflict
       - id: check-symlinks
       - id: check-yaml
-        exclude: .*/\.github/.*
+        exclude: .*/\.github/.*|.*/galaxy.yml
       - id: end-of-file-fixer
       - id: fix-encoding-pragma
       - id: mixed-line-ending
