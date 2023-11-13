@@ -1,0 +1,12 @@
+---
+# See https://yamllint.readthedocs.io/en/stable/index.html
+
+extends: default
+
+rules:
+  line-length:
+    # Set ansible default; See https://redhat-cop.github.io/automation-good-practices/#_yaml_and_jinja2_syntax
+    max: 150
+  truthy:
+    # Prevent "on:" key from being interpreted as a boolean
+    check-keys: false
