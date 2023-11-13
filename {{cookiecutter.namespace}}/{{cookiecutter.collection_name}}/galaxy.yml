@@ -50,8 +50,6 @@ build_ignore:
   - '*/.gitkeep'
   - .pre-commit-config.yaml
   - .vscode
-  - changelogs/.plugin-cache.yaml
-
-# `manifest` is mutually exclusive with `build_ignore`
+  {{ '- changelogs/.plugin-cache.yaml\n' if cookiecutter.enable_antsibull_changelog else '' }}
 # https://docs.ansible.com/ansible/devel/dev_guide/developing_collections_distributing.html#manifest-directives
 # manifest: null
