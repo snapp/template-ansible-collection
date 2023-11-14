@@ -20,13 +20,13 @@ By leveraging [cookiecutter](https://www.cookiecutter.io) you will be asked a sm
 
 ## Requirements
 
-```bash
+```console
 $ pip install cookiecutter
 ```
 
 ## Using this template
 
-```bash
+```console
 $ cookiecutter https://github.com/snapp/template-ansible-collection
 ```
 
