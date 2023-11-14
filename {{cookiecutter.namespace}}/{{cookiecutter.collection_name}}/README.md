@@ -1,8 +1,11 @@
-# Ⓐ Ansible Collection: {{ cookiecutter.namespace }}.{{ cookiecutter.collection_name }}
+[![GitHub License](https://img.shields.io/github/license/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }})](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/blob/main/LICENSE)
+[![Ansible Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-Ansible-silver.svg)](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html)
 
-![ansible-lint]({{ cookiecutter.scm_repository }}/actions/workflows/ansible-lint.yml/badge.svg)
-![ansible-test]({{ cookiecutter.scm_repository }}/actions/workflows/ansible-test.yml/badge.svg)
-![antsibull-docs-lint]({{ cookiecutter.scm_repository }}/actions/workflows/antsibull-docs-lint.yml/badge.svg)
+[![ansible-lint](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/ansible-lint.yml/badge.svg)](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/ansible-lint.yml)
+[![ansible-test](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/ansible-test.yml/badge.svg)](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/ansible-test.yml)
+[![antsibull-docs-lint](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/antsibull-docs-lint.yml/badge.svg)](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/antsibull-docs-lint.yml)
+
+# Ⓐ Ansible Collection: {{ cookiecutter.namespace }}.{{ cookiecutter.collection_name }}
 
 {{ cookiecutter.description }}
 
