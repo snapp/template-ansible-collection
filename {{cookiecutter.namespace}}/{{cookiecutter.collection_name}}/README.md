@@ -68,9 +68,12 @@ ansible-galaxy collection install {{ cookiecutter.namespace }}.{{ cookiecutter.c
 
 See [Ansible Using collections](https://docs.ansible.com/ansible/devel/user_guide/collections_using.html) for more details.
 
+{% if cookiecutter.enable_antsibull_changelog -%}
 ## Release notes
 
 See the [changelog]({{ cookiecutter.scm_repository }}/tree/main/CHANGELOG.rst).
+
+{%+ endif -%}
 
 ## Licensing
 
