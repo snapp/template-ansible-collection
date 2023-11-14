@@ -9,37 +9,39 @@
 
 {{ cookiecutter.description }}
 
-## Code of Conduct
+<!-- TODO: ## Code of Conduct
 
 We follow the [Ansible Code of Conduct](https://docs.ansible.com/ansible/devel/community/code_of_conduct.html) in all our interactions within this project.
 
 If you encounter abusive behavior, please refer to the [policy violations](https://docs.ansible.com/ansible/devel/community/code_of_conduct.html#policy-violations) section of the Code for information on how to raise a complaint.
+-->
 
-## Collection maintenance
+<!-- TODO: ## Collection maintenance
 
-The current maintainers are listed in the [MAINTAINERS](MAINTAINERS) file. If you have questions or need help, feel free to mention them in the proposals.
+The current maintainers are listed in the [CODEOWNERS](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/.github/CODEOWNERS)) file. If you have questions or need help, feel free to mention them in the proposals.
 
 To learn how to maintain / become a maintainer of this collection, refer to the [Maintainer guidelines](MAINTAINING.md).
+-->
 
-## Tested with Ansible
+<!-- TODO: ## Tested with Ansible
+List the versions of Ansible the collection has been tested with.e
+Must match what is in galaxy.yml.
+-->
 
-<!-- List the versions of Ansible the collection has been tested with. Must match what is in galaxy.yml. -->
+<!-- TODO: ## External requirements
+List any external resources the collection depends on, for example minimum versions of an OS, libraries, or utilities.
+Do not list other Ansible collections here.
+-->
 
-## External requirements
+<!-- TODO: ## Supported connections (Optional)
+If your collection supports only specific connection types (such as HTTPAPI, netconf, or others), list them here.
+-->
 
-<!-- List any external resources the collection depends on, for example minimum versions of an OS, libraries, or utilities. Do not list other Ansible collections here. -->
-
-### Supported connections
-
-<!-- Optional. If your collection supports only specific connection types (such as HTTPAPI, netconf, or others), list them here. -->
-
-## Included content
-
-<!-- Galaxy will eventually list the module docs within the UI, but until that is ready, you may need to either describe your plugins etc here, or point to an external docsite to cover that information. -->
+<!-- TODO: ## Included content
+Galaxy will eventually list the module docs within the UI, but until that is ready, you may need to either describe your plugins etc here, or point to an external docsite to cover that information.
+-->
 
 ## Using this collection
-
-<!--Include some quick examples that cover the most common use cases for your collection content. It can include the following examples of installation and upgrade (change NAMESPACE.COLLECTION_NAME correspondingly):-->
 
 ### Installing the Collection from Ansible Galaxy
 
@@ -70,6 +72,10 @@ ansible-galaxy collection install {{ cookiecutter.namespace }}.{{ cookiecutter.c
 ```
 
 See [Ansible Using collections](https://docs.ansible.com/ansible/devel/user_guide/collections_using.html) for more details.{% if cookiecutter.enable_antsibull_changelog %}
+
+<!-- TODO: ### Examples
+Include some quick examples that cover the most common use cases for your collection content.
+-->
 
 ## Release notes
 

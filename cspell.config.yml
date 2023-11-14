@@ -9,6 +9,7 @@ dictionaries:
   - overrides
 
 words:
+  - "CODEOWNERS"
   - "antsibull"
   - "cliconf"
   - "cookiecutter"
