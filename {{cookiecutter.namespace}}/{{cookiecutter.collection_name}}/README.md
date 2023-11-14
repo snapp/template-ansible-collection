@@ -47,7 +47,7 @@ Galaxy will eventually list the module docs within the UI, but until that is rea
 
 Before using this collection, you need to install it with the Ansible Galaxy command-line tool:
 
-```bash
+```console
 ansible-galaxy collection install {{ cookiecutter.namespace }}.{{ cookiecutter.collection_name }}
 ```
 
@@ -61,13 +61,13 @@ collections:
 
 Note that if you install the collection from Ansible Galaxy, it will not be upgraded automatically when you upgrade the `ansible` package. To upgrade the collection to the latest available version, run the following command:
 
-```bash
+```console
 ansible-galaxy collection install {{ cookiecutter.namespace }}.{{ cookiecutter.collection_name }} --upgrade
 ```
 
 You can also install a specific version of the collection, for example, if you need to downgrade when something is broken in the latest version (please report an issue in this repository). Use the following syntax to install version `0.1.0`:
 
-```bash
+```console
 ansible-galaxy collection install {{ cookiecutter.namespace }}.{{ cookiecutter.collection_name }}:==0.1.0
 ```
 
