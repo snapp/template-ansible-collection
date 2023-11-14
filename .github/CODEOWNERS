@@ -1,3 +1,5 @@
-# Order is important. The last matching pattern has the most precedence.
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
-*             @snapp @brandor5 @rhjhunt @markknittel
+# Default owners for everything in the repo.
+# Unless a later match takes precedence, these owners will be requested for review when someone opens a pull request.
+* @snapp @brandor5 @rhjhunt @markknittel
