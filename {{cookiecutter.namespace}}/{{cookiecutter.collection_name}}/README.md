@@ -66,11 +66,11 @@ You can also install a specific version of the collection, for example, if you n
 ansible-galaxy collection install {{ cookiecutter.namespace }}.{{ cookiecutter.collection_name }}:==0.1.0
 ```
 
-See [Ansible Using collections](https://docs.ansible.com/ansible/devel/user_guide/collections_using.html) for more details.
+See [Ansible Using collections](https://docs.ansible.com/ansible/devel/user_guide/collections_using.html) for more details.{% if cookiecutter.enable_antsibull_changelog %}
 
 ## Release notes
 
-See the [changelog]({{ cookiecutter.scm_repository }}/tree/main/CHANGELOG.rst).
+See the [changelog]({{ cookiecutter.scm_repository }}/tree/main/CHANGELOG.rst).{% endif %}
 
 ## Licensing
 
