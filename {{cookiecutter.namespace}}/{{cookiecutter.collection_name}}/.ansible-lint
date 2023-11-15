@@ -15,4 +15,5 @@ enable_list:
   - no-same-owner
 
 skip_list:
-  - yaml
+  - yaml{% if not cookiecutter.enable_antsibull_changelog %}
+  - galaxy[no-changelog]{% endif %}
