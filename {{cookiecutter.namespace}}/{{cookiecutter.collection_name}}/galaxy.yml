@@ -80,8 +80,9 @@ build_ignore:
   - .github
   - '*/.gitkeep'
   - .pre-commit-config.yaml
-  - .vscode
-  {{ '- changelogs/.plugin-cache.yaml\n' if cookiecutter.enable_antsibull_changelog else '' }}
+  - .vscode{% if cookiecutter.enable_antsibull_changelog %}
+  - changelogs/.plugin-cache.yaml{% endif %}
+
 # A dict controlling use of manifest directives used in building the collection artifact.
 # The key directives is a list of MANIFEST.in style directives
 # The key omit_default_directives is a boolean that controls whether the default directives are used
