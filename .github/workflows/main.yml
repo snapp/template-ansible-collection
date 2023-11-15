@@ -2,10 +2,18 @@
 
 name: CI
 
-on: [push, pull_request]
+on:
+  # Run against all pushes (direct commits, also merged PRs)
+  push:
+  # Run against all Pull Requests
+  pull_request:
+  # Run once a week to ensure that even if there haven't been commits that we are still testing against latest version of GitHub Actions
+  # See: https://crontab.guru
+  schedule:
+    - cron: '15 5 * * 1'
 
 concurrency:
-  group: ${{ github.ref_name }}-${{ github.workflow }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -13,16 +21,72 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
+
       - name: Run pre-commit Linter
-        uses: pre-commit/action@v3.0.0
+        uses: pre-commit/action@main
 
   spellcheck:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
+
       - name: Run cspell Spell Check
-        uses: streetsidesoftware/cspell-action@v4
+        uses: streetsidesoftware/cspell-action@main
         with:
           config: cspell.config.yml
+
+  cookiecutter:
+    needs: [lint, spellcheck]
+    name: cookiecutter (${{ matrix.extra_context }})
+    strategy:
+      matrix:
+        extra_context:
+          - defaults
+          - no_changelog
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@main
+        with:
+          path: template
+
+      - name: Setup Python
+        uses: actions/setup-python@main
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install cookiecutter pre-commit
+
+      - name: Configure cookiecutter variable overrides
+        shell: bash
+        run: |
+          cat > config.yml <<EOF
+          default_context:
+          $(case "${{ matrix.extra_context }}" in
+            no_changelog)
+            echo '  enable_antsibull_changelog: false'
+            ;;
+          esac)
+          EOF
+
+      - name: Generate Ansible collection from template
+        shell: bash
+        run: |
+          cat <<EOF
+          Running cookiecutter with the following variable overrides:
+
+          $(cat config.yml)
+
+          EOF
+          cookiecutter --no-input --config-file config.yml template
+
+      - name: Run pre-commit Linter against generated collection
+        run: |
+          cd name/example
+          git init
+          git add .
+          pre-commit run --all-files
