@@ -18,7 +18,7 @@
     ],
     "scm_repository": "https://github.com/{{ cookiecutter.namespace }}/ansible-collection-{{ cookiecutter.collection_name }}",
     "author": "username@example.com",
-    "requires_ansible_version": ">=2.15",
+    "requires_ansible_version": ">=2.15.0",
     "enable_antsibull_changelog": true,
     "__prompts__": {
         "namespace": "What namespace will this collection reside in?",
@@ -28,7 +28,7 @@
         "tag": "Select a tag you want to associate with the collection for indexing/searching",
         "scm_repository": "Where will the collection's source code be published?",
         "author": "Provide an email address for the individual or team responsible for the collection's source code",
-        "requires_ansible_version": "The version of Ansible required to use the collection. Multiple versions can be separated with a comma (e.g., '>=2.10,<2.15')",
+        "requires_ansible_version": "The version of Ansible required to use the collection. Multiple versions can be separated with a comma (e.g., '>=2.10.0,<2.15.0')",
         "enable_antsibull_changelog": "Would you like to enable antsibull-changelog support?"
     }
 }
