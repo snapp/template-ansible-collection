@@ -1,0 +1,21 @@
+---
+# NOTE: {{ cookiecutter.role_name }} Tasks
+# https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html#role-directory-structure
+
+# https://redhat-cop.github.io/automation-good-practices/#_platform_specific_variables
+- name: Set platform/version specific variables
+  ansible.builtin.include_tasks: set_vars.yml
+
+# https://redhat-cop.github.io/automation-good-practices/#_platform_specific_tasks
+- name: Perform platform/version specific tasks
+  ansible.builtin.include_tasks: "{% raw %}{{{% endraw %} lookup('first_found', __{{ cookiecutter.role_name }}_ff_params) }}"
+  vars:
+    __{{ cookiecutter.role_name }}{% raw %}_ff_params:
+      files:
+        - "{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_version'] }}.yml"
+        - "{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_major_version'] }}.yml"
+        - "{{ ansible_facts['distribution'] }}.yml"
+        - "{{ ansible_facts['os_family'] }}.yml"
+      paths:
+        - "{{ role_path }}/tasks"
+      skip: true{% endraw %}

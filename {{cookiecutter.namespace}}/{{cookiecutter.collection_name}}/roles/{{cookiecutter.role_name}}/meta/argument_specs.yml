@@ -1,0 +1,18 @@
+---
+# https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html#role-argument-validation
+
+# NOTE: {{ cookiecutter.role_name }} argument validation
+# argument_specs:
+#   main:
+#     short_description: The main entry point for the {{ cookiecutter.role_name }} role.
+#     options:
+#       {{ cookiecutter.role_name }}_int:
+#         type: "int"
+#         required: false
+#         default: 42
+#         description: "The integer value, defaulting to 42."
+#
+#       {{ cookiecutter.role_name }}_str:
+#         type: "str"
+#         required: true
+#         description: "The string value"

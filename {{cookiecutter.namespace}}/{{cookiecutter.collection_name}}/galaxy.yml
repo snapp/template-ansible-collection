@@ -27,7 +27,7 @@ authors:
   - "{{ cookiecutter.author }}"
 
 # NOTE: A short summary description of the collection.
-description: "{{ cookiecutter.description }}"
+description: "{{ cookiecutter.collection_description }}"
 
 {% if cookiecutter.license != 'none' -%}
 # NOTE: Either a single license or a list of licenses for content inside of a collection.

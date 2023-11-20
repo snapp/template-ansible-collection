@@ -4,7 +4,7 @@
 
 # These settings are synced to GitHub by https://probot.github.io/apps/settings
 repository:
-  description: "{{ cookiecutter.description }}"
+  description: "{{ cookiecutter.collection_description }}"
 
   has_issues: true
 

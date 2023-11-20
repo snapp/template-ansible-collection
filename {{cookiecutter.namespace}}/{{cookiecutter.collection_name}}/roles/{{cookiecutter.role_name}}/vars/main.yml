@@ -1,0 +1,14 @@
+---
+# https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html#role-directory-structure
+
+# NOTE: {{ cookiecutter.role_name }} Required Facts
+# https://redhat-cop.github.io/automation-good-practices/#_platform_specific_variables
+__{{ cookiecutter.role_name }}_required_facts:
+  - distribution
+  - distribution_major_version
+  - distribution_version
+  - os_family
+
+# ensure the minimum number of required facts are gathered by the 'gather_subset' parameter of the 'setup' module
+# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/setup_module.html#parameter-gather_subset
+__{{ cookiecutter.role_name }}_required_facts_subsets: "{% raw %}{{{% endraw %} ['!all', '!min'] + __{{ cookiecutter.role_name }}_required_facts }}"
