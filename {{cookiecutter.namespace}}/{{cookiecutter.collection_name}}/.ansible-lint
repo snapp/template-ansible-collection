@@ -7,6 +7,7 @@ profile: production
 
 exclude_paths:
   - changelogs
+  - extensions/molecule/utils/playbooks/converge.yml
 
 enable_list:
   - args

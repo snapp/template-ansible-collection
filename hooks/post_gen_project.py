@@ -12,6 +12,9 @@ REMOVE_PATHS = [
     {% if cookiecutter.license == 'none' %}
         '{{cookiecutter.collection_name}}/LICENSE',
     {% endif %}
+    {% if not cookiecutter.enable_molecule_test %}
+        '{{cookiecutter.collection_name}}/extensions',
+    {% endif %}
 ]
 
 for path in REMOVE_PATHS:

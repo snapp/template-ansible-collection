@@ -62,7 +62,8 @@ build_ignore:
   - '*/.gitkeep'
   - .pre-commit-config.yaml
   - .vscode{% if cookiecutter.enable_antsibull_changelog %}
-  - changelogs/.plugin-cache.yaml{% endif %}
+  - changelogs/.plugin-cache.yaml{% endif %}{% if cookiecutter.enable_molecule_test %}
+  - extensions{% endif %}
 
 # A dict controlling use of manifest directives used in building the collection artifact.
 # manifest: null
