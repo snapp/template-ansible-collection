@@ -1,0 +1,18 @@
+---
+# https://redhat-cop.github.io/automation-good-practices/#_platform_specific_variables
+
+- name: Ensure ansible_facts required by role have been gathered
+  ansible.builtin.setup:
+    gather_subset: "{% raw %}{{{% endraw %} __{{ cookiecutter.role_name }}_required_facts_subsets }}"
+  when: not ansible_facts.keys() | list | intersect(__{{ cookiecutter.role_name }}_required_facts) == __{{ cookiecutter.role_name }}_required_facts
+
+- name: Set platform/version specific variables
+  ansible.builtin.include_vars: "{% raw %}{{{% endraw %} __{{ cookiecutter.role_name }}_vars_file }}"
+  loop:{% raw %}
+    - "{{ ansible_facts['os_family'] }}.yml"
+    - "{{ ansible_facts['distribution'] }}.yml"
+    - "{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_major_version'] }}.yml"
+    - "{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_version'] }}.yml"{% endraw %}
+  vars:
+    __{{ cookiecutter.role_name }}_vars_file: {% raw %}"{{ role_path }}/vars/{{ item }}"{% endraw %}
+  when: __{{ cookiecutter.role_name }}_vars_file is file

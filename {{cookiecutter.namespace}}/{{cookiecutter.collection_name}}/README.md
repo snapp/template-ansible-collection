@@ -9,7 +9,7 @@
 [![ansible-test](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/ansible-test.yml/badge.svg)](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/ansible-test.yml)
 [![antsibull-docs-lint](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/antsibull-docs-lint.yml/badge.svg)](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/actions/workflows/antsibull-docs-lint.yml)
 
-{{ cookiecutter.description }}
+{{ cookiecutter.collection_description }}
 
 <!-- TODO: ## Code of Conduct
 

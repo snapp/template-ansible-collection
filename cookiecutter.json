@@ -1,7 +1,9 @@
 {
     "namespace": "name",
     "collection_name": "example",
-    "description": "This collection provides Ansible playbooks, roles, and modules for ...",
+    "collection_description": "This collection provides Ansible playbooks, roles, and modules for ...",
+    "role_name": "foo",
+    "role_description": "This role provides ...",
     "version": "1.0.0",
     "tag": [
         "application",
@@ -31,7 +33,9 @@
     "__prompts__": {
         "namespace": "What namespace will this collection reside in?",
         "collection_name": "What should the collection be called?",
-        "description": "Provide a short description of the collection's purpose",
+        "collection_description": "Provide a short description of the collection's purpose",
+        "role_name": "What should the first collection role be called?",
+        "role_description": "Provide a short description of the first role's purpose",
         "version": "What is the initial version?",
         "tag": "Select a tag you want to associate with the collection for indexing/searching",
         "scm_repository": "Where will the collection's source code be published?",
