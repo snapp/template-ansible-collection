@@ -1,6 +1,6 @@
 # Ⓐ Ansible Collection: {{ cookiecutter.namespace }}.{{ cookiecutter.collection_name }}
 
-{%- if cookiecutter.license != 'none' -%}
+{% if cookiecutter.license != 'none' %}
 [![GitHub License](https://img.shields.io/github/license/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }})](https://github.com/{{ cookiecutter.scm_repository | replace("https://github.com/", "") }}/blob/main/LICENSE)
 {%- endif -%}
 [![Ansible Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-Ansible-silver.svg)](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html)

@@ -1,7 +1,7 @@
 {
     "namespace": "name",
     "collection_name": "example",
-    "description": "{{ cookiecutter.namespace }}.{{ cookiecutter.collection_name }} provides Ansible playbooks, roles, and modules for ...",
+    "description": "This collection provides Ansible playbooks, roles, and modules for ...",
     "version": "1.0.0",
     "tag": [
         "application",
