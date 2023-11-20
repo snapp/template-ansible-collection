@@ -50,6 +50,7 @@ jobs:
           - no_license
           - no_changelog
           - no_license_or_changelog
+          - no_molecule
 
     runs-on: ubuntu-latest
     steps:
@@ -83,6 +84,9 @@ jobs:
             echo '  license: none'
             echo '  enable_antsibull_changelog: false'
             ;;
+            no_molecule)
+            echo '  enable_molecule_test: false'
+            ;;
           esac)
           EOF
 
@@ -96,6 +100,21 @@ jobs:
 
           EOF
           cookiecutter --no-input --config-file config.yml template
+
+      - name: Install ansible-core
+        run: |
+          export ANSIBLE_VERSION=$(sed -n '/requires_ansible_version/{s/.*\([[:digit:]]\+\.[[:digit:]]\+\.[[:digit:]]\+\).*/\1/;p;q;}' template/cookiecutter.json)
+          python3 -m pip install "https://github.com/ansible/ansible/archive/refs/tags/v${ANSIBLE_VERSION}.tar.gz" --disable-pip-version-check
+        shell: bash
+
+      - name: Install ansible collection dependencies
+        run: |
+          if [[ -d name/example/extensions ]]; then
+            ansible-galaxy collection install -r name/example/extensions/molecule/requirements.yml
+          else
+            echo 'No extensions directory found, skipping collection dependency installation'
+          fi
+        shell: bash
 
       - name: Run pre-commit Linter against generated collection
         run: |

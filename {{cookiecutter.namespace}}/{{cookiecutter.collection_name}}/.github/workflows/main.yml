@@ -21,29 +21,76 @@ concurrency:
 
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: aap_devspace
     steps:
       - name: Check out code
         uses: actions/checkout@main
+
+      # FIXME: remove --ignore-certs from ansible-galaxy commands
+      - name: Install ansible collection dependencies
+        run: |
+          # Install collection dependencies from galaxy.yml
+          ansible-galaxy collection install --ignore-certs --force .
+
+          # Install collection dependencies from all requirements.yml files
+          for requirements in $(find . -iname requirements.yml); do
+            ansible-galaxy collection install --ignore-certs --force -r "${requirements}"
+          done
+        shell: bash
 
       - name: Run pre-commit Linter
         uses: pre-commit/action@main
 
   docsite:
-    runs-on: ubuntu-latest
+    runs-on: aap_devspace
     permissions:
       contents: read
     steps:
       - name: Check out code
         uses: actions/checkout@main
 
-      - name: Setup Python
-        uses: actions/setup-python@main
-        with:
-          python-version: '3.10'
+      # FIXME: remove --ignore-certs from ansible-galaxy commands
+      - name: Install ansible collection dependencies
+        run: |
+          # Install collection dependencies from galaxy.yml
+          ansible-galaxy collection install --ignore-certs --force .
+
+          # Install collection dependencies from all requirements.yml files
+          for requirements in $(find . -iname requirements.yml); do
+            ansible-galaxy collection install --ignore-certs --force -r "${requirements}"
+          done
+        shell: bash
 
       - name: Install antsibull-docs
         run: pip install antsibull-docs --disable-pip-version-check
 
       - name: Run antsibull-docs collection linter
         run: antsibull-docs lint-collection-docs . --plugin-docs --skip-rstcheck
+
+    molecule:
+      needs: [lint, docsite]
+      runs-on: self-hosted
+      steps:
+        - name: Check out code
+          uses: actions/checkout@main
+
+        # FIXME: remove --ignore-certs from ansible-galaxy commands
+        - name: Install ansible collection dependencies
+          run: |
+            # Install collection dependencies from galaxy.yml
+            ansible-galaxy collection install --ignore-certs --force .
+
+            # Install collection dependencies from all requirements.yml files
+            for requirements in $(find . -iname requirements.yml); do
+              ansible-galaxy collection install --ignore-certs --force -r "${requirements}"
+            done
+          shell: bash
+
+        - name: Run Molecule tests
+          run: |
+            # Run molecule tests
+            cd extensions
+            for scenario in $(find . -iname molecule.yml | xargs -I {} dirname {}); do
+              molecule -vv --debug test --scenario-name "${scenario##*/}"
+            done
+          shell: bash
