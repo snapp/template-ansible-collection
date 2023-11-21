@@ -8,10 +8,10 @@ This project provides an opinionated template for bootstrapping an Ansible Colle
 
 By leveraging [cookiecutter](https://www.cookiecutter.io) you will be asked a small number of questions (e.g., namespace, collection name, etc.) which will then be automatically applied to the resulting directory structure.
 
-> **NOTE**
+> [!NOTE]
 > This template draws inspiration from the [Ansible Community GitHub Collection Template](https://github.com/ansible-collections/collection_template).
 
-> **WARNING**
+> [!WARNING]
 >
 > This code is NOT supported by Red Hat and may not work as expected.
 >
