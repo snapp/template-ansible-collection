@@ -2,6 +2,7 @@
 
 [![Github License](https://img.shields.io/github/license/snapp/template-ansible-collection)](https://github.com/snapp/template-ansible-collection/blob/main/LICENSE)
 [![Ansible Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-Ansible-silver.svg)](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html)
+[![CI](https://github.com/snapp/template-ansible-collection/actions/workflows/main.yml/badge.svg)](https://github.com/snapp/template-ansible-collection/actions/workflows/main.yml)
 
 This project provides an opinionated template for bootstrapping an Ansible Collection that extends the minimal structure provided by `ansible galaxy collection init`.
 
