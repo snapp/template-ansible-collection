@@ -18,6 +18,7 @@ An example variable.
 Another example variable.
 
   {{ cookiecutter.role_name }}_variable2
+-->
 
 <!-- TODO: ## Dependencies
 
