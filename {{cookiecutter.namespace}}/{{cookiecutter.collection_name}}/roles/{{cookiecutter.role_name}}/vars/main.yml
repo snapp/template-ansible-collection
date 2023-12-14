@@ -1,7 +1,7 @@
 ---
 # https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html#role-directory-structure
 
-# NOTE: {{ cookiecutter.role_name }} Required Facts
+# NOTE|{{ cookiecutter.role_name }}| Required Facts
 # https://redhat-cop.github.io/automation-good-practices/#_platform_specific_variables
 __{{ cookiecutter.role_name }}_required_facts:
   - distribution
