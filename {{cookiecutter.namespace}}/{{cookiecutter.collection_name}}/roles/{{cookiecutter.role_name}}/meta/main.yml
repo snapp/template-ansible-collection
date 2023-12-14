@@ -2,39 +2,39 @@
 # https://docs.ansible.com/ansible/latest/galaxy/user_guide.html#using-meta-main-yml
 
 galaxy_info:
-  # NOTE: The namespace of the role.
+  # NOTE| The namespace of the role.
   namespace: "{{ cookiecutter.namespace }}"
 
-  # NOTE: The name of the role..
+  # NOTE| The name of the role..
   role_name: "{{ cookiecutter.role_name }}"
 
-  # NOTE: A short summary description of the role.
+  # NOTE| A short summary description of the role.
   description: "{{ cookiecutter.role_description }}"
 
-  # NOTE: The company claiming ownership of the role.
+  # NOTE| The company claiming ownership of the role.
   # company: ""
 
-  # NOTE: A list of the role's content authors.
+  # NOTE| A list of the role's content authors.
   author: "{{ cookiecutter.author }}"
 
-  # NOTE: The license for content inside of a role.
+  # NOTE| The license for content inside of a role.
   license: "{{ cookiecutter.license }}"
 
-  # NOTE: The minimum Ansible version.
+  # NOTE| The minimum Ansible version.
   min_ansible_version: "{{ cookiecutter.requires_ansible_version }}"
 
-  # NOTE: The list of supported platforms
+  # NOTE| The list of supported platforms
   # platforms:
   #   - name: EL
   #     versions:
   #       - "8"
   #       - "9"
 
-  # NOTE: A list of tags (20 max) you want to associate with the role for indexing/searching.
+  # NOTE| A list of tags (20 max) you want to associate with the role for indexing/searching.
   galaxy_tags:
     - "{{ cookiecutter.tag }}"
 
-# NOTE: The list of role dependencies
+# NOTE| The list of role dependencies
 # dependencies:
 #   - role: foo
 #     vars:

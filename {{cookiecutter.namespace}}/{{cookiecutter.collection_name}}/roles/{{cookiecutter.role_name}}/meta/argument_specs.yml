@@ -1,7 +1,7 @@
 ---
 # https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html#role-argument-validation
 
-# NOTE: {{ cookiecutter.role_name }} argument validation
+# NOTE|{{ cookiecutter.role_name }}| Entry Point Argument Validation
 # argument_specs:
 #   main:
 #     short_description: The main entry point for the {{ cookiecutter.role_name }} role.

@@ -1,5 +1,5 @@
 ---
-# NOTE: {{ cookiecutter.role_name }} Default Playbook
+# NOTE|{{ cookiecutter.role_name }}| Default Playbook
 
 - name: Run {{ cookiecutter.namespace }}.{{ cookiecutter.collection_name }}.{{ cookiecutter.role_name }} # noqa: role-name[path]
   hosts: {% raw %}"{{ target | default('all') }}"{% endraw %}
