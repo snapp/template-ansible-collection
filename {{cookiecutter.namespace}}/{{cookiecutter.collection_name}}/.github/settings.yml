@@ -1,5 +1,5 @@
 ---
-# TODO: Verify the GitHub Settings App (https://github.com/apps/settings) is installed
+# TODO| Verify the GitHub Settings App (https://github.com/apps/settings) is installed
 #       to enable repository settings management via this configuration file.
 
 # These settings are synced to GitHub by https://probot.github.io/apps/settings
