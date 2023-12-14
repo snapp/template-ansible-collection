@@ -1,0 +1,79 @@
+---
+# https://ansible.readthedocs.io/projects/molecule/podman/#create-playbook
+
+- name: Create
+  hosts: localhost
+  gather_facts: false
+  vars:
+    molecule_inventory:
+      all:
+        children:
+
+  pre_tasks:
+    - name: Ensure container images are up to date
+      containers.podman.podman_image:
+        name: "{{ item.image }}"
+        pull: true
+        state: present
+      loop: "{{ molecule_yml.platforms }}"
+
+  tasks:
+    - name: Create containers
+      containers.podman.podman_container:
+        name: "{{ item.name }}"
+        image: "{{ item.image }}"
+        state: started
+        log_driver: json-file
+      register: result
+      loop: "{{ molecule_yml.platforms }}"
+
+    - name: Fail if containers are not running
+      ansible.builtin.include_tasks: tasks/create-fail.yml
+      loop: "{{ result.results }}"
+      loop_control:
+        label: "{{ item.container.Name }}"
+      when: item.container.State.ExitCode != 0 or not item.container.State.Running
+
+    - name: Add containers to molecule host group in molecule_inventory
+      ansible.builtin.set_fact:
+        molecule_inventory: >
+          {{ molecule_inventory | combine(inventory_partial_yaml | from_yaml, recursive=true) }}
+      loop: "{{ molecule_yml.platforms }}"
+      loop_control:
+        label: "{{ item.name }}"
+      vars:
+        inventory_partial_yaml: |
+          all:
+            children:
+              molecule:
+                hosts:
+                  "{{ item.name }}":
+                    ansible_connection: containers.podman.podman
+
+    - name: Persist molecule_inventory to filesystem
+      ansible.builtin.copy:
+        content: "{{ molecule_inventory | to_yaml }}"
+        dest: "{{ molecule_ephemeral_directory }}/inventory/molecule_inventory.yml"
+        mode: "0600"
+
+    - name: Force inventory refresh
+      ansible.builtin.meta: refresh_inventory
+
+    - name: Fail if molecule host group is missing
+      ansible.builtin.assert:
+        that: "'molecule' in groups"
+        fail_msg: "molecule group was not found inside inventory groups: {{ groups }}"
+      run_once: true # noqa: run-once[task]
+
+- name: Validate molecule host group is accessible
+  hosts: molecule
+  gather_facts: false
+  tasks:
+    - name: Check uname
+      ansible.builtin.raw: uname -a
+      register: result
+      changed_when: false
+
+    - name: Display uname info
+      ansible.builtin.debug:
+        msg: "{{ result.stdout }}"

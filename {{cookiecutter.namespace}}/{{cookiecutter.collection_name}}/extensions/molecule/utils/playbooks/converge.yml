@@ -1,0 +1,10 @@
+---
+# https://ansible.readthedocs.io/projects/molecule/configuration/#molecule.provisioner.ansible.Ansible.converge
+
+- name: "Converge {{ cookiecutter.namespace }}.{{ cookiecutter.collection_name }}.{% raw %}{{ playbook }}{% endraw %}"
+  ansible.builtin.import_playbook: "../../../../playbooks/{% raw %}{{ playbook }}{% endraw %}.yml" # noqa: syntax-check[missing-file]
+  vars:
+    become: false
+    ansible_become_method: su
+    target: molecule
+    playbook:

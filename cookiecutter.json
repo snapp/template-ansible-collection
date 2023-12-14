@@ -30,6 +30,7 @@
         "none"
     ],
     "enable_antsibull_changelog": true,
+    "enable_molecule_test": true,
     "__prompts__": {
         "namespace": "What namespace will this collection reside in?",
         "collection_name": "What should the collection be called?",
@@ -50,6 +51,12 @@
             "BSD-3-Clause": "BSD 3-Clause License (https://choosealicense.com/licenses/bsd-3-clause)",
             "none": "No license included"
         },
-        "enable_antsibull_changelog": "Would you like to enable antsibull-changelog support?"
-    }
+        "enable_antsibull_changelog": "Would you like to enable antsibull-changelog support?",
+        "enable_molecule_test": "Would you like to enable molecule test support?"
+    },
+    "_copy_without_render": [
+        "{{cookiecutter.collection_name}}/extensions/molecule/utils/playbooks/tasks/create-fail.yml",
+        "{{cookiecutter.collection_name}}/extensions/molecule/utils/playbooks/create.yml",
+        "{{cookiecutter.collection_name}}/extensions/molecule/utils/playbooks/destroy.yml"
+    ]
 }

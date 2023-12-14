@@ -1,5 +1,5 @@
 ---
-# NOTE: {{ cookiecutter.role_name }} Tasks
+# NOTE|{{ cookiecutter.role_name }}| Tasks
 # https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html#role-directory-structure
 
 # https://redhat-cop.github.io/automation-good-practices/#_platform_specific_variables

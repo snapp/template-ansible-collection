@@ -1,0 +1,14 @@
+---
+# https://ansible.readthedocs.io/projects/molecule/podman/#create-playbook
+
+- name: Retrieve container log
+  ansible.builtin.command:
+    cmd: >-
+      podman logs
+      {{ item.stdout_lines[0] }}
+  changed_when: false
+  register: logfile_cmd
+
+- name: Display container log
+  ansible.builtin.fail:
+    msg: "{{ logfile_cmd.stderr }}"
