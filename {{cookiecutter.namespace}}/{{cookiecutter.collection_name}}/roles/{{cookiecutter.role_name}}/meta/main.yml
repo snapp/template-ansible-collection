@@ -23,13 +23,19 @@ galaxy_info:
   # NOTE| The minimum Ansible version.
   min_ansible_version: "{{ cookiecutter.requires_ansible_version }}"
 
-  # NOTE| The list of supported platforms
+  # NOTE| The list of supported platforms{% if cookiecutter.enable_molecule_test %}
+  platforms:
+    - name: EL
+      versions:
+        - "8"
+        - "9"
+  {%- else -%}
   # platforms:
   #   - name: EL
   #     versions:
   #       - "8"
   #       - "9"
-
+{% endif %}
   # NOTE| A list of tags (20 max) you want to associate with the role for indexing/searching.
   galaxy_tags:
     - "{{ cookiecutter.tag }}"
