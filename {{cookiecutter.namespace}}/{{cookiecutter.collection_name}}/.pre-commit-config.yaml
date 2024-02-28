@@ -1,6 +1,17 @@
 ---
 
+# https://pre-commit.ci
+ci:
+  autoupdate_branch: main
+  autoupdate_schedule: weekly
+  autoupdate_prs: true
+
 repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.2
+    hooks:
+      - id: gitleaks
+
   - repo: https://github.com/ansible/ansible-lint
     rev: v6.17.2
     hooks:
@@ -21,17 +32,12 @@ repos:
       - id: check-merge-conflict
       - id: check-symlinks
       - id: check-yaml
+        exclude: .*/\.github/.*
       - id: end-of-file-fixer
       - id: fix-encoding-pragma
       - id: mixed-line-ending
         args: [--fix=lf]
       - id: pretty-format-json
+        exclude: ^cookiecutter.json$
       - id: requirements-txt-fixer
       - id: trailing-whitespace
-
-  - repo: https://github.com/pre-commit/pygrep-hooks
-    rev: v1.10.0
-    hooks:
-      - id: rst-backticks
-      - id: rst-directive-colons
-      - id: rst-inline-touching-normal

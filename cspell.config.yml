@@ -9,10 +9,11 @@ dictionaries:
   - overrides
 
 words:
-  - "CODEOWNERS"
   - "antsibull"
+  - "autoupdate"
   - "boto"
   - "cliconf"
+  - "CODEOWNERS"
   - "cookiecutter"
   - "cookiecutterrc"
   - "devel"
@@ -20,8 +21,9 @@ words:
   - "elif"
   - "endraw"
   - "esac"
-  - "fqcn"
   - "fnmatch"
+  - "fqcn"
+  - "gitleaks"
   - "gruntfuggly"
   - "hostvars"
   - "httpapi"
