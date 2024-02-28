@@ -31,10 +31,8 @@ None
 
 The following example shows how this role can be defined in a playbook with parameters passed to override default variables.
 
-> **INFORMATION**
+> [!INFORMATION]
 > It is recommended that you use a Fully Qualified Collection Name (FQCN) when referencing your roles.
->
-> For simplicity, this example shows the use of a role *without* a FQCN.
 
 ```yaml
 ---

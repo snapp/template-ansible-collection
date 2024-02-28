@@ -37,7 +37,7 @@ Cookiecutter provides a few options for specifying user configurations which can
 
 Creating a `.cookiecutterrc` file in your home directory is the easiest way to specify a user configuration, but you can also pass a config file in at runtime using the `--config-file` option.
 
-> **NOTE**
+> [!NOTE]
 > cookiecutter configuration files are formatted in YAML syntax
 
 **Example:**
